@@ -13,8 +13,8 @@ import { useState } from 'react';
     }
 
     return ( 
-        <Container>
-            <div className='header'>
+        <div className='header'>
+            <Container>
                 <h1 className="header-logo">LOGO <i className="fas fa-pray"></i></h1>
                 <div className={"navbar " + (menuClicked ? 'active' : '')}>
                     <div className='navbar--links'>
@@ -28,14 +28,17 @@ import { useState } from 'react';
                         <div className="signin">
                             <i className="far fa-user-circle"></i>
                         </div>
+                        <div className="login">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </div>
                     </div>
                 </div>
 
                 <div className="menu-icon" onClick={menuOnClick}>
                     <i className={menuClicked ? 'fas fa-times' : ' fas fa-bars'}></i>
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
  }
   
