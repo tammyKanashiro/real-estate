@@ -1,21 +1,22 @@
- import React from 'react';
- import { Container } from '../../common';
- import { Link } from 'react-router-dom'
- import './_Header.scss'
+import React from 'react';
+import logo from '../../../assets/images/logo_realestate.jpg';
+import { Container } from '../../common';
+import { Link } from 'react-router-dom'
+import './_Header.scss'
 import { useState } from 'react';
 
  const Header = () => {
+    // Mobile navBar
     const [menuClicked, setMenuClicked] = useState(false);
 
     const menuOnClick = () => {
-        console.log(menuClicked)
         setMenuClicked(!menuClicked)
     }
 
     return ( 
         <div className='header'>
             <Container>
-                <h1 className="header-logo">LOGO <i className="fas fa-pray"></i></h1>
+                <img className="header-logo" src={logo} alt="Logo" />
                 <div className={"navbar " + (menuClicked ? 'active' : '')}>
                     <div className='navbar--links'>
                         <Link className='navbar-item' to='/'>Home</Link>
@@ -29,7 +30,7 @@ import { useState } from 'react';
                             <i className="far fa-user-circle"></i>
                         </div>
                         <div className="login">
-                            <i class="fas fa-sign-in-alt"></i>
+                            <i className="fas fa-sign-in-alt"></i>
                         </div>
                     </div>
                 </div>

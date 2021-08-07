@@ -1,5 +1,6 @@
-import './App.css';
-import { Header } from './components/common';
+// import './style.scss';
+import './index.css'
+import { Header, Footer } from './components/common';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
@@ -15,15 +16,15 @@ function App() {
             </Route>
 
             <Route path="/rent">
-                {/* <Create /> */}
+                {/* <Rent /> */}
             </Route>
 
             <Route path="/buy">
-                {/* <BlogDetails /> */}
+                {/* <Buy /> */}
             </Route>
 
             <Route path="/contact-us">
-                {/* <BlogDetails /> */}
+                {/* <Contact Us /> */}
             </Route>
 
             <Route path="*">
@@ -32,6 +33,7 @@ function App() {
           </Switch>
         </div>
       
+      <Footer />
       </Router>
      
     </div>

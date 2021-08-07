@@ -1,11 +1,22 @@
+$custom_white: #FFFFFF;
+$custom_black: #000000;
 .header {
+    background-color: $custom_black;
+    // border-bottom: 2px solid $custom_black;
+    border-bottom: 2px solid $custom_black;
+
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
+        .header-logo {
+            max-height: 75px;
+        }
+
         .navbar {
             display: flex;
+            background-color: $custom_black;
 
             .navbar--links {
                 display: flex;
@@ -14,16 +25,28 @@
                 .navbar-item {
                     margin: 0 15px;
                     text-decoration: none;
+                    color: $custom_white;
+                    padding: 10px 0;
+                    width: 100%;
+                    white-space: nowrap;
+                    text-align: center;
+
+                    // &:hover {
+                    //     color: $custom_white;
+                    // }
                 }
             }
 
             .navbar--icons {
                 margin-left: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
 
-                .signin {
-                    .fa-user-circle {
-                        font-size: 25px;
-                    }
+                i {
+                    color: $custom_white;
+                    font-size: 25px;
+                    margin: 0 10px;
                 }
             }
             
@@ -31,6 +54,10 @@
 
         .menu-icon {
             display: none;
+
+            .fa-bars {
+                color: $custom_white;
+            }
         }
     }
 }
@@ -38,38 +65,73 @@
 @media screen and (max-width: 550px) {
     .header {
         position: relative;
+
         .container {
             .navbar {
-                display: none;
-                border-left: 1px solid;
+                border-left: 1px solid $custom_black;
+                // box-shadow: 0 0 10px 10px rgba(235, 33, 136,0.4);
                 padding-top: 60px;
-                background-color: #FFF;
+                // background-color: $custom_white;
                 position: fixed;
                 top: 0;
-                right: -100%;
+                right: -50%;
                 min-width: 200px;
                 height: 100%;
-                // transition-duration: 2s;
-                // transition-property: width;
-                // transition: all 3s ease;
+                opacity: 0;
+                transition: all 1s ease-in-out;
+                flex-direction: column;
 
                 &.active {
-                    display: block;
                     z-index: 0;
                     right: 0%;
-                    // transition-timing-function: linear;
-                    // transition: all 3s ease;
+                    opacity: 1;
                 }
 
                 .navbar--links {
                     display: flex;
                     flex-direction: column;
+
+                    .navbar-item {
+                        text-align: center;
+                        // color: $custom_black;
+
+                        &:hover {
+                            background-color: rgba(8, 11, 82, 0.7);
+                        }
+                    }
+                }
+
+                .navbar--icons {
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 20px;
+                    margin-top: 20px;
+                    margin-left: 0;
+                    border-top: 1px solid $custom_white;
+
+                    i {
+                        color: $custom_white;
+                    }
+
+                    .signin, .login {
+                        margin: 0 20px;
+
+                        &:hover {
+                            i{
+                                color: rgba(8, 11, 82, 0.7);
+                            }
+                        }
+                    }
                 }
             }
 
             .menu-icon {
                 display: block;
                 z-index: 50;
+
+                i {
+                    color: $custom_white;
+                }
             }
         }
     }
