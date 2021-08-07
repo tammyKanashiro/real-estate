@@ -2,6 +2,7 @@
 import './index.css'
 import { Header, Footer } from './components/common';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Home from './pages/Home/Home';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-                {/* <Home /> */}
+                <Home />
             </Route>
 
             <Route path="/rent">
