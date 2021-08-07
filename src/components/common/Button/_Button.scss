@@ -1,0 +1,32 @@
+$custom_blue: #0F52BA;
+$custom_white: #FFFFFF;
+
+.button {
+    min-width: 100px;
+    height: 40px;
+    border: 1px solid $custom_blue;
+    border-radius: 25px;
+    letter-spacing: 0.5px;
+    padding: 10px 31px;
+    
+    &.button--primary {
+        background-color: $custom_blue;
+        color: $custom_white;
+
+        &:hover {
+            background-color: $custom_white;
+            color: $custom_blue;
+        }
+    }
+
+    &.button--secondary {
+        background-color: $custom_white;
+        color: $custom_blue;
+
+        &:hover {
+            background-color: $custom_blue;
+            color: $custom_white;
+        }
+    }
+
+}
